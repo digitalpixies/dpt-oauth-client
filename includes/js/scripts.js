@@ -58,7 +58,7 @@ angular.module('DPTOAuthClientApp')
         case 1:
           $scope.control.label.disabled=false;
           $scope.control.auth_url.disabled=false;
-          $scope.control.auth_querystring.disables=false;
+          $scope.control.auth_querystring.disabled=false;
           $scope.control.token_url.disabled=false;
           $scope.control.scope.disabled=false;
           $scope.control.resource_url.disabled=false;
