@@ -1,6 +1,5 @@
 <p>
-  This OAuth module is usable with a custom OAuth server or Google OAuth server https://developers.google.com/identity/protocols/OAuth2WebServer.
-  Tested and working against Google's OAuth and custom php OAuth using oauth2-server-php https://bshaffer.github.io/oauth2-server-php-docs/.
+  This OAuth module is usable with a custom OAuth server or Google OAuth server https://developers.google.com/identity/protocols/OAuth2WebServer. Tested and working against Google's OAuth and custom php OAuth using oauth2-server-php https://bshaffer.github.io/oauth2-server-php-docs/.
 </p>
 <table class="form-table" ng-app="DPTOAuthClientApp" ng-controller="AdminCtrl">
   <tbody>
@@ -47,7 +46,8 @@
     <tr>
       <th><label for="client_auth_querystring">Auth Query String</label></th>
       <td>
-        <input name="dpt_oauth_client_auth_querystring" id="client_auth_querystring" class="regular-text" ng-init="control.auth_querystring.value='<?php print get_option('dpt_oauth_client_auth_querystring'); ?>'" type="text" ng-readonly="control.auth_querystring.disabled" ng-model="control.auth_querystring.value">
+        <input name="dpt_oauth_client_auth_querystring" id="client_auth_querystring" class="regular-text" ng-init="control.auth_querystring.value='<?php print get_option('dpt_oauth_client_auth_querystring'); ?>'" type="text" ng-readonly="control.auth_querystring.disabled"
+          ng-model="control.auth_querystring.value">
         <p class="description" id="tagline-description">Additional values to send to the auth url.</p>
       </td>
     </tr>
@@ -67,7 +67,8 @@
     <tr>
       <th><label for="client_resource_querystring">Resource Query String</label></th>
       <td>
-        <input name="dpt_oauth_client_resource_querystring" id="client_resource_querystring" class="regular-text" ng-init="control.resource_querystring.value='<?php print get_option('dpt_oauth_client_resource_querystring'); ?>'" type="text" ng-readonly="control.resource_querystring.disabled" ng-model="control.resource_querystring.value">
+        <input name="dpt_oauth_client_resource_querystring" id="client_resource_querystring" class="regular-text" ng-init="control.resource_querystring.value='<?php print get_option('dpt_oauth_client_resource_querystring'); ?>'" type="text" ng-readonly="control.resource_querystring.disabled"
+          ng-model="control.resource_querystring.value">
         <p class="description" id="tagline-description">Additional values to send to the resource url.</p>
       </td>
     </tr>
