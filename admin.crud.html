@@ -61,7 +61,7 @@
       <th><label for="client_resource_url">Resource URL</label></th>
       <td>
         <input name="dpt_oauth_client_resource_url" id="client_resource_url" class="regular-text" ng-init="control.resource_url.value='<?php print get_option('dpt_oauth_client_resource_url'); ?>'" type="text" ng-readonly="control.resource_url.disabled" ng-model="control.resource_url.value">
-        <p class="description" id="tagline-description">If left blank, the "Invoke" button will not be present in profile page. Developers can write their own code to make resource requests using the access token <strong>dpt_oauth_client::GetAccessToken()</strong></p>
+        <p class="description" id="tagline-description">If left blank, the "Invoke" button will not be present in profile page. Developers can write their own code to make resource requests using the access token <strong>dpt_oauth_client::GetAccessToken($user_id)</strong></p>
       </td>
     </tr>
     <tr>

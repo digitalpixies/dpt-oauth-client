@@ -229,13 +229,25 @@ EOF;
       print json_encode($output);
       wp_die();
 		}
-		public static function GetAccessToken() {
+		public static function GetAccessToken($user_id=null) {
+			if(empty($user_id)) {
+				if(is_admin()) {
+					$refresh_token = get_user_option(__CLASS__.'_auth', $user_id);
+				}
+				else
+					return null;
+			}
+			else {
+				$refresh_token = get_user_option(__CLASS__.'_auth');
+			}
+			if(empty($refresh_token))
+				return null;
 			$callbackurl = get_home_url(null, 'dpt-oauth-callback');
 			$data=array(
 				'client_id'=>get_option(__CLASS__.'_id'),
 				'client_secret'=>get_option(__CLASS__.'_secret'),
 				'grant_type'=>'refresh_token',
-				'refresh_token'=>get_user_option(__CLASS__.'_auth')
+				'refresh_token'=>$refresh_token
 				);
 			$postData=http_build_query($data);
 			$options = array('http'=>array(
