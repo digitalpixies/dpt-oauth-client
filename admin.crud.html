@@ -1,0 +1,82 @@
+<p>
+  This OAuth module is usable with a custom OAuth server or Google OAuth server https://developers.google.com/identity/protocols/OAuth2WebServer.
+  Tested and working against Google's OAuth and custom php OAuth using oauth2-server-php https://bshaffer.github.io/oauth2-server-php-docs/.
+</p>
+<table class="form-table" ng-app="DPTOAuthClientApp" ng-controller="AdminCtrl">
+  <tbody>
+    <tr>
+      <th><label for="client_custom"></label></th>
+      <td>
+        <input type="radio" name="client_custom" ng-model="control.custom.value" ng-change="control.custom.Change()" ng-value="1" /> Custom
+        <input type="radio" name="client_custom" ng-model="control.custom.value" ng-change="control.custom.Change()" ng-value="0" /> Preset
+        <select ng-model="control.preset.value" ng-change="control.custom.Change()" ng-show="control.custom.value==0">
+          <option value="google">Google User Profile</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_label">Name of Service</label></th>
+      <td>
+        <input name="dpt_oauth_client_label" id="client_label" class="regular-text" ng-init="control.label.value='<?php print get_option('dpt_oauth_client_label'); ?>'" type="text" ng-readonly="control.label.disabled" ng-model="control.label.value">
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_id">Client ID</label></th>
+      <td>
+        <input name="dpt_oauth_client_id" id="client_id" class="regular-text" value="<?php print get_option('dpt_oauth_client_id'); ?>" type="text">
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_secret">Client Secret</label></th>
+      <td>
+        <input name="dpt_oauth_client_secret" id="client_secret" class="regular-text" value="<?php print get_option('dpt_oauth_client_secret'); ?>" type="text">
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_scope">Scope</label></th>
+      <td>
+        <input name="dpt_oauth_client_scope" id="client_scope" class="regular-text" ng-init="control.scope.value='<?php print get_option('dpt_oauth_client_scope'); ?>'" type="text" ng-readonly="control.scope.disabled" ng-model="control.scope.value">
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_auth_url">Auth URL</label></th>
+      <td>
+        <input name="dpt_oauth_client_auth_url" id="client_auth_url" class="regular-text" ng-init="control.auth_url.value='<?php print get_option('dpt_oauth_client_auth_url'); ?>'" type="text" ng-readonly="control.auth_url.disabled" ng-model="control.auth_url.value">
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_auth_querystring">Auth Query String</label></th>
+      <td>
+        <input name="dpt_oauth_client_auth_querystring" id="client_auth_querystring" class="regular-text" ng-init="control.auth_querystring.value='<?php print get_option('dpt_oauth_client_auth_querystring'); ?>'" type="text" ng-readonly="control.auth_querystring.disabled" ng-model="control.auth_querystring.value">
+        <p class="description" id="tagline-description">Additional values to send to the auth url.</p>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_token_url">Token URL</label></th>
+      <td>
+        <input name="dpt_oauth_client_token_url" id="client_token_url" class="regular-text" ng-init="control.token_url.value='<?php print get_option('dpt_oauth_client_token_url'); ?>'" type="text" ng-readonly="control.token_url.disabled" ng-model="control.token_url.value">
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_resource_url">Resource URL</label></th>
+      <td>
+        <input name="dpt_oauth_client_resource_url" id="client_resource_url" class="regular-text" ng-init="control.resource_url.value='<?php print get_option('dpt_oauth_client_resource_url'); ?>'" type="text" ng-readonly="control.resource_url.disabled" ng-model="control.resource_url.value">
+        <p class="description" id="tagline-description">If left blank, the "Invoke" button will not be present in profile page. Developers can write their own code to make resource requests using the access token <strong>dpt_oauth_client::GetAccessToken()</strong></p>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="client_resource_querystring">Resource Query String</label></th>
+      <td>
+        <input name="dpt_oauth_client_resource_querystring" id="client_resource_querystring" class="regular-text" ng-init="control.resource_querystring.value='<?php print get_option('dpt_oauth_client_resource_querystring'); ?>'" type="text" ng-readonly="control.resource_querystring.disabled" ng-model="control.resource_querystring.value">
+        <p class="description" id="tagline-description">Additional values to send to the resource url.</p>
+      </td>
+    </tr>
+    <tr>
+      <th><label for="dpt-oauth-callback">Redirect URI</label></th>
+      <td>
+        <pre><?php print $callbackurl; ?></pre>
+        <p class="description" id="tagline-description">Add this to the oauth provider.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
