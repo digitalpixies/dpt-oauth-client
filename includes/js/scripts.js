@@ -7,7 +7,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'ui.bootstrap',
-    'ngFileUpload'
+//    'ngFileUpload'
   ]);
 
 angular.module('DPTOAuthClientApp')
