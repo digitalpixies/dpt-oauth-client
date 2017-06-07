@@ -3,7 +3,7 @@
 Plugin Name: OAuth Client by DigitialPixies
 Plugin URI: http://wordpress.digitalpixies.com/dpt-oauth-client
 Description: Connect to an OAuth server to access protected contents
-Version: 1.0.0
+Version: 1.1.0
 Author: Robert Huie
 Author URI: http://DigitalPixies.com
 License: GPLv2
