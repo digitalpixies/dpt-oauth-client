@@ -24,7 +24,10 @@ Connect to an OAuth server for authorization grants.
 
 == Changelog ==
 
-= 1.0 =
+= 1.1.0 =
+* Ability to get token by user id
+
+= 1.0.0 =
 * Initial release
 
 == Upgrade Notice ==
